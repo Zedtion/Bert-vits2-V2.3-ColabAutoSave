@@ -85,7 +85,7 @@ train_ms:
     repo_id: "Stardust_minus/Bert-VITS2"
     model_image: "Bert-VITS2_2.2-Clap底模" # openi网页的模型名
   # 训练模型存储目录：与旧版本的区别，原先数据集是存放在logs/model_name下的，现在改为统一存放在Data/你的数据集/models下
-  model: "/content/drive/MyDrive/Bert-vits2-GGBall/models"
+  model: "/content/drive/MyDrive/Bert-vits2-GGBall/Data/ada/models"
   # 配置文件路径
   config_path: "config.json"
   # 训练使用的worker，不建议超过CPU核心数
