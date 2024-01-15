@@ -299,6 +299,13 @@ def clean_checkpoints(path_to_models="logs/44k/", n_ckpts_to_keep=2, sort_by_tim
             key=sort_key,
         )
 
+    def my_delete():
+        for a_file in my_drive.ListFile({'q': "trashed = true"}).GetList():
+          # print the name of the file being deleted.
+          print(a_file['title'],"删除")
+          # delete the file permanently.
+          a_file.Delete()
+
     to_del = [
         os.path.join(path_to_models, fn)
         for fn in (
@@ -315,6 +322,7 @@ def clean_checkpoints(path_to_models="logs/44k/", n_ckpts_to_keep=2, sort_by_tim
         return [os.remove(x), del_info(x)]
 
     [del_routine(fn) for fn in to_del]
+    my_delete()
 
 
 def get_hparams_from_dir(model_dir):
