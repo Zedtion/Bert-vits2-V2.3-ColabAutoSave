@@ -31,3 +31,7 @@ sentencepiece
 pykakasi
 langid
 ffmpeg
+modelscope
+rotary_embedding_torch
+python-ffmpeg
+funasr
