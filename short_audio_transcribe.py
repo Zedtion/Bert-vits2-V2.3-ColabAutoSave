@@ -6,7 +6,7 @@ import sys
 from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 
-dataset_name = 'ada'
+dataset_name = 'esd'
 dir = './Data/ada/wavs'
 # opt_name=dir.split("\\")[-1].split("/")[-1]
 opt_name = os.path.basename(dir)
