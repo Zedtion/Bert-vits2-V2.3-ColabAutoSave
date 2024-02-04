@@ -9,7 +9,8 @@ from modelscope.utils.constant import Tasks
 dataset_name = 'esd'
 dir = './Data/ada/wavs'
 # opt_name=dir.split("\\")[-1].split("/")[-1]
-opt_name = os.path.basename(dir)
+# opt_name = os.path.basename(dir)
+opt_name = 'ada'
 inference_pipeline = pipeline(
     task=Tasks.auto_speech_recognition,
     model='./damo_models/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch',
