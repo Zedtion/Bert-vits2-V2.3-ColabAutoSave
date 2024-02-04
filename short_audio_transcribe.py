@@ -26,7 +26,7 @@ for name in os.listdir(dir):
     except:
         print(traceback.format_exc())
 
-opt_dir = "./damo_opt"
+opt_dir = "./Data/ada"
 os.makedirs(opt_dir, exist_ok=True)
 with open(f"{opt_dir}/{dataset_name}.list", "w", encoding="utf-8")as f:
     f.write("\n".join(opt))
