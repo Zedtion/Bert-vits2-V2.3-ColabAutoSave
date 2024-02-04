@@ -7,7 +7,8 @@ from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 
 dataset_name = 'esd'
-dir = './Data/ada/wavs'
+read_dir = './Data/ada/raw'
+write_dir = './Data/ada/wavs'
 # opt_name=dir.split("\\")[-1].split("/")[-1]
 # opt_name = os.path.basename(dir)
 opt_name = 'ada'
@@ -19,11 +20,11 @@ inference_pipeline = pipeline(
 )
 
 opt = []
-for name in os.listdir(dir):
+for name in os.listdir(read_dir):
     print(name)
     try:
-        text = inference_pipeline(input="%s/%s" % (dir, name))[0]['text']
-        opt.append("%s/%s|%s|ZH|%s" % (dir, name, opt_name, text))
+        text = inference_pipeline(input="%s/%s" % (read_dir, name))[0]['text']
+        opt.append("%s/%s|%s|ZH|%s" % (write_dir, name, opt_name, text))
     except:
         print(traceback.format_exc())
 
